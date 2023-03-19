@@ -1,10 +1,13 @@
 <?php
-if(isset($_GET['empty_fields']) && $_GET['empty_fields'] == 1) {
-    echo "<div style=\"padding: 20px; color: red;\">Prasome uzpildyti visus laukus</div>";
-}
 
-if(isset($_GET['success']) && $_GET['success'] == 1) {
-    echo "<div style=\"padding: 20px; color: green;\">Vartotojas sukurtas sekmingai</div>";
+session_start();
+
+if (isset($_SESSION['msg'])) {
+    $msg = $_SESSION['msg'];
+    $color = $_SESSION['color'];
+    unset($_SESSION['msg']);
+    unset($_SESSION['color']);
+    echo '<h2 style="color:'. $color .'">' . $msg . '</h2>';
 }
 
 ?>
@@ -17,7 +20,10 @@ if(isset($_GET['success']) && $_GET['success'] == 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        div {
+            padding: 7px;
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>

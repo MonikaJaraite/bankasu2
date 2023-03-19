@@ -10,10 +10,10 @@
     <?php 
         require_once('./menu.php');
     ?>
-    <form action="pridejimas.php" method="post">
+    <form action="atemimas.php" method="post">
         <input type="hidden" name="id" value="<?= $_GET['id']; ?>">
         <input type="text" name="funds">
-        <input type="submit" value="prideti">
+        <input type="submit" value="atimti">
     </form>
 </body>
 </html>
