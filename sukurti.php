@@ -1,6 +1,10 @@
 <?php
 
 session_start();
+if(!isset($_SESSION['id'])) {
+    header('Location: http://localhost/bankasu2/login.php');
+    die;
+}
 
 if (isset($_SESSION['msg'])) {
     $msg = $_SESSION['msg'];

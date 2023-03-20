@@ -15,6 +15,7 @@
 <body style="background:lightgrey;">
     <a href="http://localhost/bankasu2/sarasas.php">Sąrašas</a>
     <a href="http://localhost/bankasu2/sukurti.php">Naujos sąskaitos sukūrimas</a>
+    <a href="http://localhost/bankasu2/logout.php">Log Out</a>
 </body>
 </html>
 

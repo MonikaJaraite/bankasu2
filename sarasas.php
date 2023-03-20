@@ -10,6 +10,10 @@
 <?php
 
 session_start();
+if(!isset($_SESSION['id'])) {
+    header('Location: http://localhost/bankasu2/login.php');
+    die;
+}
 
 if (isset($_SESSION['msg'])) {
     $msg = $_SESSION['msg'];
@@ -22,6 +26,7 @@ if (isset($_SESSION['msg'])) {
     <?php 
         require_once('./menu.php');
         $users = json_decode(file_get_contents('./users.json'));
+        if(!$users) die;
         function sortByName($a, $b) {
             return strcmp($a->surname, $b->surname);
         }
@@ -34,18 +39,19 @@ if (isset($_SESSION['msg'])) {
                 <th>Vardas</th>
                 <th>Pavardė</th>
                 <th>Asmens kodas</th>
+                <th>Sąskaitos Nr.</th>      <!-- PRIRASIAU -->
                 <th>Lėšos</th>
                 <th>Pridėjimas</th>
                 <th>Atėmimas</th>
                 <th>Ištrynimas</th>
             </tr>
         <?php 
-        if(!$users) die;
         foreach($users as $user) {
             echo '<tr>';
             echo '<td>' . $user->name . '</td>';
             echo '<td>' . $user->surname . '</td>';
             echo '<td>' . $user->personal_id . '</td>';
+            echo '<td>' . $user->account_no . '</td>'; // PRIRASIAU
             echo '<td>' . $user->funds . '</td>';
             ?>
             <td>

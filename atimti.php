@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION['id'])) {
+    header('Location: http://localhost/bankasu2/login.php');
+    die;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
