@@ -57,8 +57,8 @@ if (isset($_SESSION['msg'])) {
                 <th>Vardas</th>
                 <th>Pavardė</th>
                 <th>Asmens kodas</th>
-                <th>Sąskaitos Nr.</th>
-                <th>€</th>
+                <th>Sąskaita</th>
+                <th>Eur</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -76,12 +76,12 @@ if (isset($_SESSION['msg'])) {
                 <a href="http://localhost/bankasu2/prideti.php?id=<?= $user->id; ?>">Pridėti lėšų</a>
             </td>
             <td>
-                <a href="http://localhost/bankasu2/atimti.php?id=<?= $user->id; ?>">Atimti lėšų</a>
+                <a href="http://localhost/bankasu2/atimti.php?id=<?= $user->id; ?>">Nuskaičiuoti lėšas</a>
             </td>
             <?php
             echo '<td>'; 
             ?>
-            <form action="./istrynimas.php" method="post">
+            <form action="./istrinimas.php" method="post">
                 <input type="hidden" name="id" value="<?= $user->id; ?>">
                 <input type="submit" value="Ištrinti">
             </form>

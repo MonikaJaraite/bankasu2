@@ -18,10 +18,10 @@ if(!isset($_SESSION['id'])) {
     <?php 
         require_once('./menu.php');
     ?>
-    <form action="atemimas.php" method="post">
+    <form action="nuskaiciavimas.php" method="post">
         <input type="hidden" name="id" value="<?= $_GET['id']; ?>">
         <input type="text" name="funds">
-        <input type="submit" value="Atimti lėšas">
+        <input type="submit" value="Nuskaičiuoti lėšas">
     </form>
 </body>
 </html>

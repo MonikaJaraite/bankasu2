@@ -14,14 +14,16 @@
         img {
             margin-left: 30%;
         }
-        a {
+        a { 
+            display: block;
             /* padding-left: 20px; */
-            padding: 20px;
+            padding: 5px;
             font-weight: bold;
             /* font-size: 20px; */
             color: darkgreen;
         }
         div {
+           
             padding: 0 0 20px 0;
             text-align: center;
         }
@@ -35,9 +37,9 @@
 <body style="background:whitesmoke;">
     <h2>MY RICH PIGGY BANK</h2>
     <div style="font-size: 20px;">
-        <a style="color:blue;" href="http://localhost/bankasu2/sarasas.php">Sąrašas</a>
+        <a style="color:black;" href="http://localhost/bankasu2/sarasas.php">Sąrašas</a>
         <a style="color:black;" href="http://localhost/bankasu2/sukurti.php">Sukurti naują</a>
-        <a style="color:darkred;" href="http://localhost/bankasu2/logout.php">Atsijungti</a>
+        <a style="color:crimson;" href="http://localhost/bankasu2/logout.php">Atsijungti</a>
     </div>
 </body>
 </html>
