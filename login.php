@@ -14,13 +14,13 @@ if(isset($_POST) && !empty($_POST)) {
     foreach($workers as $worker) {
         if($worker->name == $_POST['name'] && $worker->password == $_POST['password']) {
             $_SESSION['id'] = $worker->name;
-            $_SESSION['msg'] = 'Sekmingai prisijungete';
+            $_SESSION['msg'] = 'Sveiki prisijungę!';
             $_SESSION['color'] = 'green';
             header('Location: http://localhost/bankasu2/sarasas.php');
             die;
         }
     } 
-    $_SESSION['msg'] = 'Neteisingai ivesti duomenys';
+    $_SESSION['msg'] = 'Duomenys neteisingi. Prašome bandyti dar kartą';
     $_SESSION['color'] = 'red';
     header('Location: http://localhost/bankasu2/login.php');
 }
@@ -31,16 +31,38 @@ if(isset($_POST) && !empty($_POST)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mano bankelis</title>
+    <style>
+        body {
+            background:whitesmoke; 
+            margin-left: 20px; 
+            margin-top: 100px; 
+            width: 500px; 
+            text-align:center
+        }
+        h1 {
+            color: fuchsia;
+            word-spacing: 10px;
+        }
+        div {
+            padding: 10px;
+            font-size: 20px;
+        }
+        input {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <form action="" method="post">
+    <img src="./rich-piggy-bank.jpg" alt="Piggy logo">
+    <h1>MY RICH PIGGY BANK</h1>
+    <form action="" method="post" style="padding-top: 20px;">
         <div>
             <label for="name">Prisijungimo vardas:</label>
             <input type="text" name="name">
         </div>
         <div>
-            <label for="password">Slaptazodis:</label>
+            <label for="password">Slaptažodis:</label>
             <input type="text" name="password">
         </div>
         <div>

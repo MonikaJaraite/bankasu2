@@ -12,7 +12,7 @@ if(!isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rich</title>
 </head>
 <body>
     <?php 
@@ -21,7 +21,7 @@ if(!isset($_SESSION['id'])) {
     <form action="atemimas.php" method="post">
         <input type="hidden" name="id" value="<?= $_GET['id']; ?>">
         <input type="text" name="funds">
-        <input type="submit" value="atimti">
+        <input type="submit" value="Atimti lėšas">
     </form>
 </body>
 </html>

@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_POST)) {
-    $_SESSION['msg'] = 'Atsiprasome, ivyko klaida';
+    $_SESSION['msg'] = 'Atsiprašome, įvyko klaida';
     $_SESSION['color'] = 'red';
     header('Location: http://localhost/bankasu2/sarasas.php');
     die;
@@ -16,7 +16,7 @@ foreach ($users as &$user) {
         if($user->funds >= $_POST['funds']) {
             $user->funds -= $_POST['funds'];
         } else {
-            $_SESSION['msg'] = 'Saskaitoje per mazai lesu';
+            $_SESSION['msg'] = 'Operacijai sąskaitoje nepakanka lėšų';
             $_SESSION['color'] = 'red';
             header('Location: http://localhost/bankasu2/sarasas.php');
             die;
@@ -25,6 +25,6 @@ foreach ($users as &$user) {
 }
 
 file_put_contents('users.json', json_encode($users));
-$_SESSION['msg'] = 'Lesos atimtos sekmingai';
+$_SESSION['msg'] = 'Lėšos sumažintos';
 $_SESSION['color'] = 'green';
 header('Location: http://localhost/bankasu2/sarasas.php');
